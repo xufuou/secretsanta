@@ -3,7 +3,7 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
  */
-
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 html,
 body {
   width: 100%;
@@ -71,9 +71,10 @@ header.masthead .header-content h1 {
 }
 	  
 header.masthead .device-container {
-    max-width: 325px;
-    margin-right: auto;
-    margin-left: auto; 
+
+    top: -60%;
+    left: 100%;
+   position:absolute;
 }
 	
 
@@ -202,14 +203,26 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-outline {
-  color: white;
+/*  color: white;
   border: 1px solid;
-  border-color: white; }
+  border-color: white; */
+background-color: #f95252; 
+color:white;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
   
-.btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-    color: white;
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active{
+/*    color: white;
     border-color: #d74a49;
-    background-color: #d74a49; 
+    background-color: #d74a49; */
+    background-color: #33cc77; 
+color:white;
+
 }
 
 .btn {
@@ -236,9 +249,12 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 
 .navbar .navbar-brand {
+font-family: 'Varela Round', sans-serif;
     color: #d74a49;
-    font-weight: 700;
-    letter-spacing: 1px; 
+font-size:20px;
+letter-spacing:0;
+    /*font-weight: 700;
+    letter-spacing: 1px;*/ 
     
 }
 
@@ -279,6 +295,10 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 }
 
-.btn-link{
- color: #d74a49;
+.navbar.btn-link{
+  color:#f95252;
+ /*color: #d74a49;*/
+}
+.fa-hashtag{
+color:white;
 }
