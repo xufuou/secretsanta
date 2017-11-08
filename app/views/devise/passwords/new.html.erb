@@ -1,16 +1,41 @@
-<h2>Forgot your password?</h2>
+  
+<%= stylesheet_link_tag 'devise.css', media: 'all'%>  
+  
+</head>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<body>
+  <body class="align">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="grid">
+
+    <div id="login">
+
+      <h2><span class="fa fa-question"></span>Forgot password</h2>
+
+      <form action="#" method="POST">
+
+		<fieldset>
+		  <button class="social-facebook"><i class="fa fa-facebook"></i> Facebook</button>
+		  <hr>
+          <p><label for="email">E-mail address</label></p>
+          <p><input type="email" id="email" placeholder="mail@address.com"></p>
+          <p><input type="submit" value="Reset"></p>
+		  <hr>
+		  <div>
+		    <a href="users/sign_up" style="float:left;">Sign Up</a> 
+			<a href="users/sign_up" style="float:right;">Sign In</a> 
+		  </div>
+        </fieldset>
+		
+
+      </form>
+
+    </div> <!-- end login -->
+
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
+  
+  
+</body>
+</html>
