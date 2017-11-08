@@ -43,7 +43,6 @@ gem 'devise'
 # add omniauth
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-google'
 
 # add bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
