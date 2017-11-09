@@ -107,7 +107,7 @@ input {
 }
 
 /* ---------- LOGIN ---------- */
-#login h2 {
+#login h3 {
   background: #f95252;
   /*background:#2d3e50;*/
   border-radius: 20px 20px 0 0;
@@ -116,9 +116,6 @@ input {
   padding: 20px 26px;
 }
 
-#login h2 span[class*="fontawesome-"] {
-  margin-right: 14px;
-}
 
 #login fieldset {
   background: #fff;
@@ -229,3 +226,8 @@ a:hover{
    padding-right:10px;
 }
 
+em{
+
+    font-size: 14px;
+
+}

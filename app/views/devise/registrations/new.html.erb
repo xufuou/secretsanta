@@ -5,44 +5,50 @@
   
 </head>
 
-<body>
   <body class="align">
 
   <div class="grid">
 
     <div id="login">
 
-      <h2><span class="fa fa-lock"></span>Sign Up</h2>
+      <h3><span class="fa fa-lock"></span>Sign Up</h2>
 
-      <form action="#" method="POST">
-
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		<fieldset>
-		  <button class="social-facebook"><i class="fa fa-facebook"></i> Facebook</button>
+
+	<%- if devise_mapping.omniauthable? %>
+  		<%- resource_class.omniauth_providers.each do |provider| %>
+		<button class="social-facebook">
+		<i class="fa fa-facebook"></i>
+    		<%= link_to "#{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
+		</button>
+
+  		<% end -%>
+	<% end -%>
 		  <hr>
-          <p><label for="email">E-mail address</label></p>
-          <p><input type="email" id="email" placeholder="mail@address.com"></p>
+ 	   <%= devise_error_messages! %>
 
-          <p><label for="password">Password</label></p>
-          <p><input type="password" id="password" placeholder="password"></p>
-		  <p><label for="password">Password confirmation</label></p>
-          <p><input type="password" id="password" placeholder="password"></p>
-
-          <p><input type="submit" value="Sign Up"></p>
+        <p><%= f.label :email %></p>
+        <p> <%= f.email_field :email, autofocus: true %></p>
+	<p> <%= f.label :password %></p>
+	<% if @minimum_password_length %>
+		<em>(<%= @minimum_password_length %> characters minimum)</em>
+	<% end %>
+	<p><%= f.password_field :password, autocomplete: "off" %></p>
+	<p><%= f.label :password_confirmation %></p>          
+	<p><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
+          <p><%= f.submit "Sign up" %></p>
 		  <hr>
 		  <div>
-			<a href="users/sign_up" style="float:right;">Sign In</a> 
+			<%= link_to "Sign In", new_session_path(resource_name) %>
 		  </div>
         </fieldset>
 		
 
-      </form>
+	<% end %>
 
-    </div> <!-- end login -->
+    </div> 
 
-  </div>
-
-</body>
-  
-  
+  </div>  
 </body>
 </html>
