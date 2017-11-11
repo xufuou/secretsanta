@@ -51,8 +51,14 @@ section {
     font-size: 50px; }
 
 
+h-100{
+   height:100%!important;
+}
 
 header.masthead {
+
+  padding-top: 150px;
+  padding-bottom: 100px;
   position: relative;
   width: 100%;
   color: white;
@@ -72,12 +78,10 @@ header.masthead .header-content h1 {
 }
 	  
 header.masthead .device-container {
-
-    top: -60%;
-    left: 100%;
-   position:absolute;
+  max-width: 325px;
+    margin-right: auto;
+    margin-left: auto;
 }
-	
 
 @media (min-width: 992px) {
     header.masthead {
@@ -302,4 +306,34 @@ letter-spacing:0;
 }
 .fa-hashtag{
 color:white;
+}
+
+
+
+
+
+
+#page-top > header > div > div{
+	margin-top: 8%;
+
+}
+
+ @media (min-width: 992px) {
+	#page-top > header > div > div{
+		margin-top: 25%;
+
+	}
+
+
+}
+
+
+#page-top > header > div > div > div.col-lg-7.my-auto > div > a{
+border-radius:4px;
+background:#f0d355;
+
+}
+#page-top > header > div > div > div.col-lg-7.my-auto > div > a:hover{
+background:#dac04e;
+
 }

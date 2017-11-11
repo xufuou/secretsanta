@@ -10,17 +10,25 @@
   </head>
   <body id="page-top">
     <header class="masthead">
-	<canvas id="bubble"></canvas>
-	<div style="position:absolute;left:10%;top:40%;width:50%;">
-    <h1 class="mb-5">Queres proporcionar um Natal mais feliz a crianças carenciadas de Braga? Inscreve-te para seres um Secret Santa.</h1>
-              <a href="users/sign_up" class="btn btn-outline btn-xl js-scroll-trigger">Registar</a>
-            <div class="device-container">
-<%= image_tag("chimney.png", :alt => "chimney") %>
+
+ 	<div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+    		<h1 class="mb-5">Queres proporcionar um Natal mais feliz a crianças carenciadas de Braga?
+                <p>Inscreve-te para seres um Secret Santa.</p>
+                </h1>
+		<a href="users/sign_up" class="btn btn-outline btn-xl js-scroll-trigger">Registar</a>
+            </div>
           </div>
-        </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+		<%= image_tag("chimney.png", :alt => "chimney", :class=>"img-responsive") %>
+            </div>
+          </div>
       </div>
     </header>
-	
+
     <section class="features" id="features">
       <div class="container">
         <div class="section-heading text-center">
@@ -63,10 +71,11 @@
       <div class="cta-content">
         <div class="container">
           <h2>Change </br>by giving.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">I want to help!</a>
+          <a href="#" class="btn btn-outline btn-xl js-scroll-trigger">I want to help!</a>
         </div>
       </div>
-      <div class="overlay"></div>
+      <div class="overlay">
+      </div>
     </section>
   </body> 
 </html>
