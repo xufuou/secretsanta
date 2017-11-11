@@ -148,8 +148,8 @@ input {
   color: #fff;
   display: block;
   margin: 0 auto;
-  padding: 4px 0;
-  width: 100px;
+  padding: 5px;
+  min-width:100px;
   
 }
 
@@ -158,23 +158,26 @@ input {
   cursor:pointer;
 }
 
-button{
-  font:inherit;
-  color: #fff;
-  padding: 8px 10px;
-  width: 100%;
-  border:none;
-  margin-bottom:15px;
-  border-radius: 3px;
-}
 
 .social-facebook{
-	background:#4267b2;
-	transition: all 0.5s ease;
+
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    color: #fff;
+    background:#4267b2;
+    transition: all 0.5s ease;
+ font:inherit;
+ border:none;
+  margin-bottom:15px;
+  border-radius: 3px;
+
 }
 .social-facebook:hover{
 	background:#385797;
-	
+        text-decoration:none;
+	color:#fff;	
 }
 
 
@@ -192,16 +195,14 @@ hr{
 }
 
 a{
-	text-decoration:none;
-	
-	color:#777;
-	/* color:#2d3e50; */
+	text-decoration:none;	
+	color:#fff;
+	color:#2d3e50;
 	transition: all 0.5s ease;
 }
 
 a:hover{
 	color:#2d3e50;
-	
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
