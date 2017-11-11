@@ -1,0 +1,46 @@
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+      cursor:default;
+      color: #d74a49;
+}
+
+
+  @media (min-width: 992px) {
+    .navbar {
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    .navbar .navbar-brand {
+        color: fade(white, 70%);
+    }
+
+    .navbar.navbar-shrink {
+        border-color: rgba(34, 34, 34, 0.1);
+        background-color: white;
+    }
+
+    .navbar.navbar-shrink .navbar-brand {
+        cursor: default;
+        color: #161f28;
+    }
+
+    .navbar.navbar-shrink .navbar-brand:hover, .navbar.navbar-shrink .navbar-brand:focus {
+        color: #161f28;
+    }
+
+    .navbar.navbar-shrink .navbar-nav > .btn-link,
+    .navbar.navbar-shrink .navbar-nav > .btn-link:focus {
+          color: #161f28;
+    }
+
+}
+
+.navbar.btn-link{
+  color:#f95252;
+ /*color: #d74a49;*/
+}
+.fa-hashtag{
+color:white;
+}
+
+
