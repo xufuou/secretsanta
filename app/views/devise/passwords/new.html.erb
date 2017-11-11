@@ -1,34 +1,33 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+
   
-<%= stylesheet_link_tag 'devise.css', media: 'all'%>  
-  
+<%= stylesheet_link_tag 'devise.css', media: 'all'%>    
 </head>
-
-<body>
   <body class="align">
-
   <div class="grid">
-
     <div id="login">
+      <h3><span class="fa fa-question"></span>Forgot password</h3>
 
-      <h2><span class="fa fa-question"></span>Forgot password</h2>
-
-      <form action="#" method="POST">
 
 		<fieldset>
-		  <button class="social-facebook"><i class="fa fa-facebook"></i> Facebook</button>
+      <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to "#{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), {:class=>'social-facebook' }%>
+                <% end -%>
+        <% end -%>
 		  <hr>
-          <p><label for="email">E-mail address</label></p>
-          <p><input type="email" id="email" placeholder="mail@address.com"></p>
-          <p><input type="submit" value="Reset"></p>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+          <p><%= f.label :email %></p>
+          <p><%= f.email_field :email, autofocus: true %></p>
+          <p><%= f.submit "Reset password" %></p>
 		  <hr>
 		  <div>
-		    <a href="users/sign_up" style="float:left;">Sign Up</a> 
-			<a href="users/sign_up" style="float:right;">Sign In</a> 
+  			<%= link_to "Sign up", new_registration_path(resource_name),{:style=>'float:left;'} %>
+ 			<%= link_to "Sign in", new_session_path(resource_name) ,{:style=>'float:right;'}%>
 		  </div>
         </fieldset>
-		
-
-      </form>
+	<% end %>
 
     </div> <!-- end login -->
 
