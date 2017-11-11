@@ -330,10 +330,14 @@ color:white;
 
 #page-top > header > div > div > div.col-lg-7.my-auto > div > a{
 border-radius:4px;
-background:#f0d355;
-
+text-transform: uppercase;
+background:none;
+ border: 1px solid;
+  border-color: white; 
+ -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
 #page-top > header > div > div > div.col-lg-7.my-auto > div > a:hover{
-background:#dac04e;
-
+background:#33cc77;
+border:none;
 }
