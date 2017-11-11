@@ -1,50 +1,39 @@
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
-<%= stylesheet_link_tag 'devise.css', media: 'all'%>  
-  
-
-  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+<%= stylesheet_link_tag 'devise.css', media: 'all'%>    
 </head>
-
-<body>
-  <body class="align">
-
+<body class="align">
   <div class="grid">
-
     <div id="login">
-
       <h3><span class="fa fa-lock"></span>Sign In</h3>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	  <fieldset>
 
-      <form action="#" method="POST">
-		
-		
+        <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to "#{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), {:class=>'social-facebook' }%>
+        <% end -%>
+        <% end -%>
+  
+                <hr>
+           <%= devise_error_messages! %>
 
-			
-		<fieldset>
-		  <button class="social-facebook"><i class="fa fa-facebook"></i> Facebook</button>
-		  <hr>
-          <p><label for="email">E-mail address</label></p>
-          <p><input type="email" id="email" placeholder="mail@address.com"></p>
-
-          <p><label for="password">Password</label></p>
-          <p><input type="password" id="password" placeholder="password"></p>
-
-          <p><input type="submit" value="Sign In"></p>
-		  <hr>
-		  <div>
-			<a href="#" style="float:left;">Forgot password</a>
-			<a href="users/sign_up" style="float:right;">Sign Up</a> 
-		  </div>
+          <p><%= f.label :email %></p>
+          <p><%= f.email_field :email, autofocus: true %></p>
+          <p><%= f.label :password %><br /></p>
+          <p><%= f.password_field :password, autocomplete: "off" %></p>
+          <% if devise_mapping.rememberable? -%>
+		<%= f.check_box :remember_me %>
+		<%= f.label :remember_me %>
+	  <% end -%>
+	  <p style="margin-top: 10px;"><%= f.submit "Log in" %></p>
+	  <hr>
+	  <div>
+ 	     <%= link_to "Forgot your password?", new_password_path(resource_name),{:style=>'float:left;'} %>
+             <%= link_to "Sign up", new_registration_path(resource_name),{:style=>'float:right;'} %>
+          </div>
         </fieldset>
-		
-
-      </form>
-
+  	<% end -%>
     </div> <!-- end login -->
-
   </div>
-
-</body>
-  
-  
 </body>
 </html>
