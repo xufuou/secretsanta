@@ -12,13 +12,21 @@
     <!-- Navigation -->
 
 	<div class="navbar navbar-fixed-top">
-    	<div class="container">
+	<div class="container">
         <div class="navbar-header pull-left">
                 <a class="navbar-brand js-scroll-trigger" href="javascript:void(0)"><i class="fa fa-hashtag"></i> secret santa</a>
-        	</div>
+	</div>
         <div class="navbar-header pull-right">
-        	<button type="button" class="btn btn-link navbar-btn"><a href="https://www.facebook.com/includebraga/"><i class="fa fa-facebook fa-lg"></a></i></button>
-        	<button type="button" class="btn btn-link navbar-btn"><a href="https://www.instagram.com/includebraga/"><i class="fa fa-instagram fa-lg"></i></a></button>
+		<a class="btn btn-link navbar-btn" href="https://www.facebook.com/includebraga/"><i class="fa fa-facebook fa-lg"></i></a>
+		<a  class="btn btn-link navbar-btn" href="https://www.instagram.com/includebraga/"><i class="fa fa-instagram fa-lg"></i></a>
+		<% if controller_name == 'welcome' %>
+		    <% if user_signed_in? %>
+			<%= link_to 'Logout', destroy_user_session_path, :method=> :delete, :class=>'btn btn-link navbar-btn' %>      
+		    <% else %>
+			<%= link_to 'Login', new_user_session_path,:class=>'btn btn-link navbar-btn'  %>  
+		    <% end %>
+		<% end %>
+
     	</div>
     	</div>
     </div>

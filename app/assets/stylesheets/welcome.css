@@ -329,15 +329,23 @@ color:white;
 
 
 #page-top > header > div > div > div.col-lg-7.my-auto > div > a{
-border-radius:4px;
-text-transform: uppercase;
-background:none;
- border: 1px solid;
-  border-color: white; 
- -webkit-transition-duration: 0.4s; /* Safari */
+    border-radius:4px;
+    text-transform: uppercase;
+    background:none;
+    border: 1px solid;
+    border-color: white; 
+    -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 #page-top > header > div > div > div.col-lg-7.my-auto > div > a:hover{
-background:#33cc77;
-border:none;
+    background:#33cc77;
+    border-color:#33cc77;
+}
+
+#page-top > div > div > div.navbar-header.pull-right > a:nth-child(3){
+    text-decoration:none;
+
+}
+#page-top > header > div > div > div.col-lg-7.my-auto > div > h1 > p{
+    margin-top:10px;
 }
