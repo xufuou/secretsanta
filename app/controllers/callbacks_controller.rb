@@ -16,9 +16,9 @@ class CallbacksController < Devise::OmniauthCallbacksController
     	redirect_to root_path
     end
 
-    protected
-    def after_sign_in_path_for(resource)
-        '/santa/letter' # Or :prefix_to_your_route
-    end
+    #protected
+    #def after_sign_in_path_for(resource)
+    #    '/santa/letter' # Or :prefix_to_your_route
+    #end
 
 end
