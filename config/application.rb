@@ -15,4 +15,10 @@ module Secretsanta
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
+
+def after_sign_in_path_for(user)
+   "/home/index"
 end
+
+end
+

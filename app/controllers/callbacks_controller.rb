@@ -1,4 +1,5 @@
 class CallbacksController < Devise::OmniauthCallbacksController
+
     def facebook
         @user = User.from_omniauth(request.env["omniauth.auth"])
         if @user.persisted?
@@ -14,4 +15,10 @@ class CallbacksController < Devise::OmniauthCallbacksController
     def failure
     	redirect_to root_path
     end
+
+    protected
+    def after_sign_in_path_for(resource)
+        '/santa/letter' # Or :prefix_to_your_route
+    end
+
 end

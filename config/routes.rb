@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   #get 'welcome/home'
+
+  
+  get '/santa/letter', to: 'home#get_letter', as: 'user'
+
 	
   devise_for :users, :controllers => {:omniauth_callbacks => "callbacks" }
  
