@@ -11,32 +11,29 @@
   <body>
     <!-- Navigation -->
 
-	<div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
 	<div class="container">
-        <div class="navbar-header pull-left">
+             <div class="navbar-header pull-left">
                 <a class="navbar-brand js-scroll-trigger" href="javascript:void(0)"><i class="fa fa-hashtag"></i> secret santa</a>
-	</div>
-        <div class="navbar-header pull-right">
-		<a class="btn btn-link navbar-btn" href="https://www.facebook.com/includebraga/"><i class="fa fa-facebook fa-lg"></i></a>
-		<a  class="btn btn-link navbar-btn" href="https://www.instagram.com/includebraga/"><i class="fa fa-instagram fa-lg"></i></a>
-		<% if controller_name == 'welcome' %>
-		    <% if user_signed_in? %>
+	     </div>
+             <div class="navbar-header pull-right">
+	     	<a class="btn btn-link navbar-btn" href="https://www.facebook.com/includebraga/"><i class="fa fa-facebook fa-lg"></i></a>
+	   	<a  class="btn btn-link navbar-btn" href="https://www.instagram.com/includebraga/"><i class="fa fa-instagram fa-lg"></i></a>
+           	<% if controller_name == 'welcome' || controller_name == 'home'  %>
+	            <% if user_signed_in? %>
 			<%= link_to 'Logout', destroy_user_session_path, :method=> :delete, :class=>'btn btn-link navbar-btn' %>      
 		    <% else %>
 			<%= link_to 'Login', new_user_session_path,:class=>'btn btn-link navbar-btn'  %>  
 		    <% end %>
-		<% end %>
-
-    	</div>
-    	</div>
+	        <% end %>
+	      </div>
+	</div>
     </div>
 
     <%= yield %>
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2017 #include &lt;braga&gt</p>
 
-      </div>
+    <footer class="footer">
+        <p>&copy; 2017 #include &lt;braga&gt</p>
     </footer>
 
   </body>
